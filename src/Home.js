@@ -19,6 +19,8 @@ export default class FirstPage extends Component {
     this.state = {
       selectedTab: 'first',
     };
+    const {navigator} = this.props;
+
   }
   pressButton() {
     const {navigator} = this.props;
@@ -39,12 +41,12 @@ export default class FirstPage extends Component {
 
   }
 
-  
+
   render() {
     return (
       <TabBarIOS
         tintColor='#ec594e'
-        unselectedTintColor='gray'>
+        unselectedTintColor='#eeeeee'>
         <TabBarIOS.Item
           title='收款'
           icon={require('./img/home/icon_shoukuan@2x.png')}
@@ -55,7 +57,7 @@ export default class FirstPage extends Component {
             });
           }}
         >
-        <Collection/>
+        <Collection navigator={navigator}/>
         </TabBarIOS.Item>
         <TabBarIOS.Item
           title='账单'
@@ -67,7 +69,7 @@ export default class FirstPage extends Component {
             });
           }}
         >
-        <Main/>
+        <Main navigator={navigator}/>
         </TabBarIOS.Item>
         <TabBarIOS.Item
           icon={require('./img/home/icon_saoyisao@2x.png')}

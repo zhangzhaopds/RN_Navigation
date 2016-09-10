@@ -8,42 +8,26 @@ import {
   TextInput
 } from 'react-native';
 
-import Calculator from './Calculator';
 
 
-export default class Main extends Component {
+
+export default class Calculator extends Component {
   constructor(props) {
     super(props);
+    console.log('支付通道： '+this.props.payChannel);
     this.state = {
       account: ''
     };
   }
   _pressButton() {
-    const {navigator} = this.props;
-    console.log(navigator);
-    // if (navigator) {
-    //   navigator.push({
-    //     name: 'Calculator',
-    //     component: Calculator
-    //   })
-    // }
-    global.navi.push({
-      name: 'Calculator',
-      component: Calculator,
-    })
+    global.navi.pop();
   }
   render() {
     return (
-      <View style={{backgroundColor: 'white', flex: 1}}>
-        <View style={styles.container}>
-          <Text style={styles.title}>账号</Text>
-          <TextInput
-            style={styles.inputText}
-            placeholder={'请输入账号'}
-            onChangeText={account => this.setState({account})} />
-        </View>
+      <View style={{backgroundColor: 'gray', flex: 1}}>
+
         <TouchableOpacity onPress={this._pressButton.bind(this)}>
-            <Text style={styles.nextPageBtn}>点我跳转</Text>
+            <Text style={styles.nextPageBtn}>点我返回</Text>
         </TouchableOpacity>
       </View>
     );

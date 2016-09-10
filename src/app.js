@@ -26,6 +26,7 @@ class RN_Navigation extends Component {
         return Navigator.SceneConfigs.PushFromRight;
       }}
       renderScene={(route, navigator) => {
+        global.navi = navigator;
         let Component = route.component;
         return (
           <Component {...route.params} navigator={navigator} />

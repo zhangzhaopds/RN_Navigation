@@ -87,13 +87,17 @@ export default class Login  extends Component{
 
   // 登陆
   _pressLoginBtn() {
-    const {navigator} = this.props;
-    if (navigator) {
-      navigator.resetTo({
-        name: 'Home',
-        component: Home,
-      })
-    }
+    // const {navigator} = this.props;
+    // if (navigator) {
+    //   navigator.resetTo({
+    //     name: 'Home',
+    //     component: Home,
+    //   })
+    // }
+    global.navi.resetTo({
+      name: 'Home',
+      component: Home,
+    })
     /*
     var TXPaySDK = require('react-native').NativeModules.TXPaySDK;
     TXPaySDK.ocInitBaseURL('http://api.tongxingpay.com/txpayApi/app?');
